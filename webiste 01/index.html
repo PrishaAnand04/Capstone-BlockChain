@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Avikshipt - Track Package</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-title">Avikshipt</div>
+    <div class="nav-links">
+      <button onclick="document.getElementById('faqSection').scrollIntoView({behavior: 'smooth'})">FAQs</button>
+      <button onclick="document.getElementById('contactSection').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Track Your Package</h1>
+    <p>Enter your Package/User ID below to view its delivery timeline</p>
+    <input type="text" placeholder="Enter Package ID" id="packageId" />
+    <button onclick="viewTimeline()">View Timeline</button>
+  </div>
+
+  <div class="wave-divider">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+  </svg>
+</div>
+
+  
+  <section id="faqSection" class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <details>
+        <summary>
+          <span class="faq-number">Q1</span>
+          How do I track my package?
+          <i class="fas fa-chevron-down"></i>
+        </summary>
+        <p>Enter your Package ID above and click "View Timeline" to see the current status of your delivery.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="faq-number">Q2</span>
+          What if my package is delayed?
+          <i class="fas fa-chevron-down"></i>
+        </summary>
+        <p>If you experience delays, please contact our support team with your Package ID.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="faq-number">Q3</span>
+          Can I change the delivery address?
+          <i class="fas fa-chevron-down"></i>
+        </summary>
+        <p>Address changes must be requested before the package is shipped. Contact support for assistance.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contactSection" class="contact-section">
+    <div class="contact-header">
+      <h2>Get In Touch</h2>
+      <p>We're here to help with any questions about your shipment</p>
+    </div>
+    
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3>Email</h3>
+        <p>support@avikshipt.com</p>
+        <a href="mailto:support@avikshipt.com">Send Message</a>
+      </div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <h3>Phone</h3>
+        <p>+91 98xxxxxx90</p>
+        <a href="tel:+919876543210">Call Now</a>
+      </div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3>Visit Us</h3>
+        <p>Manipal University Jaipur, Rajasthan, India</p>
+        <a href="https://maps.google.com" target="_blank">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function viewTimeline() {
+      const id = document.getElementById("packageId").value.trim();
+      if (id) {
+        window.location.href = `timeline.html?pkg=${encodeURIComponent(id)}`;
+      }
+    }
+
+    
+    document.querySelectorAll('details').forEach((detail) => {
+      detail.addEventListener('toggle', () => {
+        if (detail.open) {
+          detail.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
+        } else {
+          detail.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
