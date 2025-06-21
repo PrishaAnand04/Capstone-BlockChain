@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Package Timeline</title>
+  <link rel="stylesheet" href="timeline.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-title">Avikshipt</div>
+    <div class="nav-links">
+      <button onclick="window.location.href='index.html'">Home</button>
+    </div>
+  </div>
+
+  <div class="timeline-wrapper">
+    <h2>Package Timeline</h2>
+    <div class="timeline-container" id="timelineContainer">
+    </div>
+  </div>
+
+  <script>
+    // Sample data 
+    const timelineData = [
+      {
+        title: "Shipped",
+        timestamp: "2025-06-01 10:30",
+        manager: "M123",
+        status: "Sealed"
+      },
+      {
+        title: "In Transit",
+        timestamp: "2025-06-03 14:00",
+        manager: "M456",
+        status: "Sealed"
+      },
+      {
+        title: "Delivered",
+        timestamp: "2025-06-05 16:45",
+        manager: "M789",
+        status: "Sealed"
+      }
+    ];
+
+    function renderTimeline() {
+      const container = document.getElementById('timelineContainer');
+      container.innerHTML = '';
+      
+      timelineData.forEach((stage, index) => {
+        const stageEl = document.createElement('div');
+        stageEl.className = 'timeline-stage';
+        stageEl.innerHTML = `
+          <h3>${stage.title}</h3>
+          <div class="meta"><strong>Timestamp:</strong> ${stage.timestamp}</div>
+          <div class="meta"><strong>Manager ID:</strong> ${stage.manager}</div>
+          <div class="meta"><strong>Seal Status:</strong> ${stage.status}</div>
+        `;
+        container.appendChild(stageEl);
+      });
+    }
+
+    // Render timeline on load
+    window.onload = renderTimeline;
+  </script>
+</body>
+</html>
