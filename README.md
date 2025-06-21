@@ -63,8 +63,8 @@ Supply chains are vulnerable to fraud, counterfeits, and inefficiencies. Our sol
 
 ## Team
 
+- Prisha Anand
 - Harshwardhan Pandey  
-- Prisha Anand  
 - Arnav Bawa  
 - Shreya Singh  
 
