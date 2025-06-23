@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Package QR Update</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="navbar">
+      <div class="nav-title">Avikshipt</div>
+    </div>
+
+    <div class="main-container">
+      <!-- Left Panel: Prevoius Stage Info -->
+      <div class="left-panel">
+        <h2>Previous Stage Info</h2>
+        <p><strong>Stage:</strong> <span id="prevStage">Packaging</span></p>
+        <p><strong>Manager:</strong> <span id="prevManager">Manager A</span></p>
+        <p><strong>Timestamp:</strong> <span id="prevTimestamp">2025-06-16 10:30</span></p>
+        <p><strong>Seal Status:</strong> <span id="prevSeal">Intact</span></p>
+        <div id="tamperingLogs"></div>
+
+        <!-- Blockchain Log inside left-panel -->
+        <div id="stageTimeline">
+          <h3>Blockchain Log</h3>
+          <ul id="logList"></ul>
+        </div>
+      </div>
+
+      <!-- Right Panel: QR Generator -->
+      <div class="right-panel">
+        <h2>Stage Update Form</h2>
+        <form id="qrForm">
+          <label>Manager ID:</label>
+          <input type="text" id="managerID" required>
+
+          <label>Stage:</label>
+          <input type="text" id="stage" required>
+
+          <label>Seal Status:</label>
+          <select id="sealStatus">
+            <option value="Intact">Intact</option>
+            <option value="Broken">Broken</option>
+          </select>
+
+          <button type="submit">➕ Add Stage Data & Generate QR</button>
+        </form>
+
+        <div id="qrcode"></div>
+
+        <!-- Report Tampering Section -->
+        <div class="tamper-section">
+          <h3>🚨 Report Seal Break Event</h3>
+          <p>If you notice a broken seal, report it immediately.</p>
+          <button id="reportBtn">Report Tampering</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 Avikshipt | All rights reserved</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
