@@ -61,19 +61,10 @@ Supply chains are vulnerable to fraud, counterfeits, and inefficiencies. Our sol
 
 ---
 
-## Impact & ROI
-
-- Reduces fraud by up to 80%
-- Cuts compliance costs by 50%
-- Improves logistics by 30%
-- Projected ROI of 500–1000% over time
-
----
-
 ## Team
 
+- Prisha Anand
 - Harshwardhan Pandey  
-- Prisha Anand  
 - Arnav Bawa  
 - Shreya Singh  
 
