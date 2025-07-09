@@ -1,6 +1,6 @@
 # Audit Trail for Supply Chains using Blockchain
 
-A secure and scalable platform designed to modernize supply chains through **Blockchain**, **IoT**, and **AI**. This project was built as part of the **Deloitte Capstone Program 2024**.
+A secure and scalable platform designed to modernize supply chains through **Blockchain**, **IoT**, and **AI**. This project was built as part of the **Deloitte Capstone Program 2025**.
 
 ---
 
