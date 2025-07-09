@@ -137,3 +137,9 @@ button[type="submit"]:hover {
   color: #c0392b;
 }
 
+#sensorData p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+

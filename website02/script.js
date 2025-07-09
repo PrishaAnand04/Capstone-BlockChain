@@ -52,3 +52,28 @@ reportBtn.addEventListener('click', () => {
   tamperLog.innerHTML = `<span style="color:#c0392b; font-weight:bold;">🚨 Tampering Alert</span> logged at ${timestamp}`;
   logList.appendChild(tamperLog);
 });
+
+// Simulated sensor update (replace with real polling in production)
+function simulateSensorUpdate() {
+  const sampleData = {
+    tagId: 'RFID123456',
+    status: 'Scanned',
+    location: 'Warehouse B',
+    actor: 'Transporter',
+    timestamp: new Date().toLocaleString(),
+  };
+
+  document.getElementById('sensorPackage').textContent = sampleData.tagId;
+  document.getElementById('sensorStatus').textContent = sampleData.status;
+  document.getElementById('sensorLocation').textContent = sampleData.location;
+  document.getElementById('sensorTime').textContent = sampleData.timestamp;
+  document.getElementById('sensorActor').textContent = sampleData.actor;
+
+  // Optional: Add to blockchain log UI
+  const logEntry = document.createElement('li');
+  logEntry.innerHTML = `<strong>Sensor Scan</strong> from <em>${sampleData.actor}</em> at ${sampleData.timestamp} | Status: ${sampleData.status}`;
+  logList.appendChild(logEntry);
+}
+
+// Simulate update every 15 seconds
+setInterval(simulateSensorUpdate, 15000);
